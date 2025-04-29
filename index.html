@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SwiftSecured: A machine learning-powered web application to detect credit card fraud in real time." />
+  <meta name="keywords" content="credit card fraud, machine learning, SwiftSecured, full-stack, AI" />
+  <meta name="author" content="Suraj Srivastav" />
+  <title>SwiftSecured Blog</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Matrix rain background effect */
+    #matrix-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.1;
+    }
+    /* Hover animation for links */
+    .link-hover {
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+    .link-hover:hover {
+      color: #5eead4;
+      transform: translateY(-2px);
+    }
+    /* Theme toggle button */
+    .theme-toggle {
+      transition: background-color 0.3s ease;
+    }
+    /* Responsive images */
+    img {
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    /* Hide mobile menu by default */
+    #mobile-menu {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white font-sans leading-relaxed transition-colors duration-300" id="body">
+  <!-- Matrix Rain Background -->
+  <canvas id="matrix-bg"></canvas>
+
+  <!-- Navigation Bar -->
+  <nav class="bg-gray-800 sticky top-0 z-10 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+      <a href="#" class="text-xl sm:text-2xl font-bold text-teal-400">SwiftSecured</a>
+      <div class="hidden md:flex space-x-4">
+        <a href="https://swiftsecured.onrender.com" class="text-blue-400 link-hover" aria-label="Live Demo">Demo</a>
+        <a href="https://github.com/surajsri23/Swiftsecured" class="text-blue-400 link-hover" aria-label="GitHub Repository">GitHub</a>
+        <button id="theme-toggle" class="theme-toggle bg-teal-500 text-white px-3 py-1 rounded hover:bg-teal-600" aria-label="Toggle Theme">🌙</button>
+      </div>
+      <button id="mobile-menu-button" class="md:hidden text-teal-400 focus:outline-none" aria-label="Toggle Mobile Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="md:hidden bg-gray-800 px-4 pt-2 pb-4">
+      <a href="https://swiftsecured.onrender.com" class="block text-blue-400 link-hover py-2" aria-label="Live Demo">Demo</a>
+      <a href="https://github.com/surajsri23/Swiftsecured" class="block text-blue-400 link-hover py-2" aria-label="GitHub Repository">GitHub</a>
+      <button id="theme-toggle-mobile" class="theme-toggle bg-teal-500 text-white px-3 py-1 rounded hover:bg-teal-600 mt-2" aria-label="Toggle Theme">🌙</button>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <h1 class="text-3xl sm:text-4xl font-bold text-teal-400 mb-6">SwiftSecured: Detecting Credit Card Fraud with Machine Learning</h1>
+    <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&w=1170&q=80" alt="Digital Credit Card Security Interface" class="w-full rounded-lg mb-6 shadow-lg" />
+
+    <p class="mb-6 text-sm sm:text-base">With the rise of online transactions, credit card fraud has become a critical issue. <strong>SwiftSecured</strong> is a full-stack solution that utilizes machine learning to detect fraudulent activity in real time, all packed inside a responsive and secure web interface.</p>
+
+    <p class="mb-4 text-sm sm:text-base">🔗 <a href="https://swiftsecured.onrender.com" class="text-blue-400 underline link-hover" aria-label="Live Demo">Live Demo</a></p>
+    <p class="mb-6 text-sm sm:text-base">📁 <a href="https://github.com/surajsri23/Swiftsecured" class="text-blue-400 underline link-hover" aria-label="GitHub Repository">GitHub Repository</a></p>
+
+    <h2 class="text-xl sm:text-2xl font-semibold text-teal-300 mt-8 sm:mt-10 mb-4">Tech Stack</h2>
+    <ul class="list-disc list-inside mb-6 text-sm sm:text-base">
+      <li>Frontend: HTML, Tailwind CSS, JavaScript</li>
+      <li>Backend: Python Flask</li>
+      <li>ML Model: Trained on Kaggle Credit Card Fraud Dataset</li>
+      <li>Database: SQLite</li>
+      <li>Deployment: Render.com</li>
+    </ul>
+
+    <h2 class="text-xl sm:text-2xl font-semibold text-teal-300 mt-8 sm:mt-10 mb-4">How It Works</h2>
+    <ol class="list-decimal list-inside mb-6 space-y-2 text-sm sm:text-base">
+      <li>User inputs anonymized transaction data.</li>
+      <li>Data is sent to the Flask backend via JS.</li>
+      <li>Model predicts: Fraud / Not Fraud.</li>
+      <li>Result is stored in the SQLite database with timestamp.</li>
+      <li>User can view a prediction history log.</li>
+    </ol>
+
+    <h2 class="text-xl sm:text-2xl font-semibold text-teal-300 mt-8 sm:mt-10 mb-4">Key Features</h2>
+    <ul class="list-disc list-inside mb-6 text-sm sm:text-base">
+      <li>Live prediction with a trained ML model</li>
+      <li>Clean UI with responsive Tailwind CSS</li>
+      <li>History logging with SQLite</li>
+      <li>Model integration via Joblib</li>
+      <li>Deployed and accessible globally</li>
+    </ul>
+
+    <p class="mb-6 text-base sm:text-lg font-semibold text-teal-400">
+      🚀 <a href="https://swiftsecured.onrender.com" class="underline text-blue-400 hover:text-blue-200 link-hover" aria-label="Try SwiftSecured">Try SwiftSecured Live →</a>
+    </p>
+
+    <img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1170&q=80" alt="Machine Learning Neural Network Visualization" class="w-full rounded-lg mb-6 shadow-lg" />
+
+    <h2 class="text-xl sm:text-2xl font-semibold text-teal-300 mt-8 sm:mt-10 mb-4">Future Plans</h2>
+    <ul class="list-disc list-inside mb-6 text-sm sm:text-base">
+      <li>Add user login/register system</li>
+      <li>Admin dashboard with analytics</li>
+      <li>Upgrade model using XGBoost/LightGBM</li>
+      <li>Export results as PDF</li>
+      <li>Use PostgreSQL for production-grade database</li>
+      <li>Enable API access for third-party use</li>
+      <li>Integrate email alerts for detected frauds</li>
+      <li>Apply CI/CD for seamless deployment</li>
+      <li>Add animated dashboard and user interface illustrations</li>
+      <li>Introduce dark/light mode theme toggle</li>
+    </ul>
+
+    <h2 class="text-xl sm:text-2xl font-semibold text-teal-300 mt-8 sm:mt-10 mb-4">Reflections</h2>
+    <p class="mb-6 text-sm sm:text-base">This project gave me a comprehensive understanding of deploying machine learning models, integrating backend logic with front-end presentation, and managing data with SQLite. It also highlighted real-world challenges such as handling imbalanced datasets, and designing for responsiveness and user experience.</p>
+
+    <blockquote class="border-l-4 border-teal-500 pl-4 italic mb-6 text-sm sm:text-base">“Building SwiftSecured was not just a technical journey, but also an educational one. It reflects my passion for data, security, and full-stack development.”</blockquote>
+
+    <hr class="my-8 sm:my-10 border-teal-500" />
+
+    <div class="text-center">
+      <h2 class="text-lg sm:text-xl font-bold text-teal-400">About the Developer</h2>
+      <p class="mt-4 text-sm sm:text-base">👨‍💻 <strong>Suraj Srivastav</strong></p>
+      <p class="text-sm sm:text-base">Passionate about AI, Machine Learning, and Full-Stack Development</p>
+      <p class="text-sm sm:text-base">Email: <a href="mailto:srivastavsuraj230@gmail.com" class="text-blue-400 link-hover" aria-label="Email Suraj">srivastavsuraj230@gmail.com</a></p>
+      <p class="text-sm sm:text-base">GitHub: <a href="https://github.com/surajsri23" class="text-blue-400 link-hover" aria-label="Suraj's GitHub">surajsri23</a></p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 py-6 mt-8 sm:mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-teal-400 text-sm sm:text-base">© 2025 SwiftSecured by Suraj Srivastav</p>
+      <div class="mt-4 space-x-4">
+        <a href="https://github.com/surajsri23" class="text-blue-400 link-hover text-sm sm:text-base" aria-label="GitHub">GitHub</a>
+        <a href="mailto:srivastavsuraj230@gmail.com" class="text-blue-400 link-hover text-sm sm:text-base" aria-label="Email">Email</a>
+        <a href="https://swiftsecured.onrender.com" class="text-blue-400 link-hover text-sm sm:text-base" aria-label="Live Demo">Demo</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Matrix Rain and Theme Toggle Script -->
+  <script>
+    // Matrix Rain Effect
+    const canvas = document.getElementById('matrix-bg');
+    const ctx = canvas.getContext('2d');
+    
+    function resizeCanvas() {
+      canvas.height = window.innerHeight;
+      canvas.width = window.innerWidth;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    const chars = '01';
+    const fontSize = 14;
+    let columns = canvas.width / fontSize;
+    let drops = [];
+    for (let x = 0; x < columns; x++) drops[x] = 1;
+
+    function draw() {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = '#0f766e';
+      ctx.font = fontSize + 'px monospace';
+      for (let i = 0; i < drops.length; i++) {
+        const text = chars.charAt(Math.floor(Math.random() * chars.length));
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+        drops[i]++;
+      }
+    }
+    setInterval(draw, 33);
+
+    // Theme Toggle
+    const toggleButton = document.getElementById('theme-toggle');
+    const toggleButtonMobile = document.getElementById('theme-toggle-mobile');
+    const body = document.getElementById('body');
+    const toggleTheme = () => {
+      body.classList.toggle('bg-gray-900');
+      body.classList.toggle('bg-gray-100');
+      body.classList.toggle('text-white');
+      body.classList.toggle('text-gray-900');
+      const isDark = body.classList.contains('bg-gray-900');
+      toggleButton.textContent = isDark ? '🌙' : '☀️';
+      toggleButtonMobile.textContent = isDark ? '🌙' : '☀️';
+    };
+    toggleButton.addEventListener('click', toggleTheme);
+    toggleButtonMobile.addEventListener('click', toggleTheme);
+
+    // Mobile Menu Toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
